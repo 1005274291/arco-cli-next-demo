@@ -18,7 +18,7 @@
     "react-router-dom": "^6.5.0"
   },
   "devDependencies": {
-    "@arco-cli-next/arco": "^2.3.3",
+    "@arco-cli/arco": "^2.0.0-alpha.0",
     "@testing-library/dom": "^8.19.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
