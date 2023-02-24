@@ -4,33 +4,33 @@
       {
         "name": "UserSelect",
         "rootDir": "packages/user-select/src",
-        "entries": {
-          "main": "index.ts",
-          "style": "style/index.less",
-          "jsdoc": "interface.ts",
-          "preview": "__docs__/index.mdx"
-        }
       },
       {
         "name": "Button",
         "rootDir": "packages/library/components",
         "entries": {
-          "main": "Button/index.ts",
-          "style": "Button/style/index.less",
-          "jsdoc": "Button/interface.ts",
-          "preview": "Button/__docs__/index.mdx"
+          "base": "./Button"
         }
       },
       {
         "name": "Tag",
         "rootDir": "packages/library/components",
         "entries": {
-          "main": "Tag/index.ts",
-          "style": "Tag/style/index.less",
-          "jsdoc": "Tag/interface.ts",
-          "preview": "Tag/__docs__/index.mdx"
+          "base": "./Tag"
         }
       }
-    ]
+    ],
+    "defaultComponentEntries": {
+      "base": ".",
+      "main": "./index.ts",
+      "style": "./style/index.less",
+      "jsdoc": "./interface.ts",
+      "preview": "./__docs__/index.mdx"
+    }
+  },
+  "arco.service/syncer": {
+    "defaultMaterialMeta": {
+      "group": 1
+    }
   }
 }

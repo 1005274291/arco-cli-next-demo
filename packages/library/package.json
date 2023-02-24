@@ -1,4 +1,13 @@
 {
   "name": "my-library",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "scripts": {
+    "build": "arco build",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "es",
+    "lib",
+    "artifacts"
+  ]
 }

@@ -1,10 +1,10 @@
 # arco-cli@next
 
-这是一个 `arco-cli@2.x` 的预览项目。目前仅提供了本地开发时的能力预览，后续随着功能迭代将持续更新此 Demo。
+`arco-cli@2.x` 的预览项目。
 
 ## 快速开始
 
-1. 克隆此项目后，使用 `npm install` 或者 `yarn` 安装依赖。(`pnpm` 环境下，依赖路径解析目前存在问题，暂不可用)
+1. 克隆此项目后，使用 `npm install` 或者 `yarn` 或者 `pnpm i` 安装依赖。
 2. `yarn start` 本地运行工作区。
 
 ## 配置入口
@@ -17,28 +17,46 @@
     "components": [
       {
         "name": "UserSelect",
-        "rootDir": "packages/user-select/src",
+        "rootDir": "packages/user-select/src"
+      },
+      {
+        "name": "Button",
+        "rootDir": "packages/library/components",
         "entries": {
-          "main": "index.ts",
-          "style": "style/index.less",
-          "jsdoc": "interface.ts",
-          "preview": "__docs__/index.mdx"
+          "base": "./Button"
         }
       }
-    ]
+    ],
+    "defaultComponentEntries": {
+      "base": ".",
+      "main": "./index.ts",
+      "style": "./style/index.less",
+      "jsdoc": "./interface.ts",
+      "preview": "./__docs__/index.mdx"
+    }
+  },
+  "arco.service/syncer": {
+    "defaultMaterialMeta": {
+      "group": 1
+    }
   }
 }
 ```
 
-组件描述部分，各个字段的含义如下：
+配置文件的根节点名称为 AspectID，关于工作区组件的配置位于 `root['arco.aspect/workspace']` 字段下。其字段的含义如下：
 
-* `name`: 组件名，用于在工作区和物料平台中展示；
-* `rootDir`: 组件的入口路径，不同于 NPM 包根路径；
-* `entries`: 组件各主要文件对于 `rootDir` 的相对路径；
-  * `main`: 组件主入口；
-  * `style`: 组件样式主入口；
-  * `jsdoc`: 组件 API 文档解析的入口；
-  * `preview`: 组件预览的入口；
+* `components`: 组件描述入口；
+  * `name`: 组件名，并由 `packageName/name` 构成组件 ID；
+  * `rootDir`: 构建入口，不同于 NPM 包根路径（通常为 `src`）；
+  * `entries`: 关键文件信息；
+    * `base`: 源码目录（默认为 `./`，在组件库类型的包中可能形如 `./components`）；
+    * `main`: 主入口（相对于 `base`）；
+    * `style`: 样式主入口（相对于 `base`）；
+    * `jsdoc`: API 文档解析的入口（相对于 `base`）；
+    * `preview`: 预览入口（相对于 `base`）；
+    
+* `defaultComponentEntries`: `components.entries` 字段默认值配置;
+
 
 **关于单包组件和组件库（单包多组件）的说明：**
 
@@ -67,3 +85,104 @@
 ## 测试
 
 运行 `yarn test` 命令。
+
+```bash
+# 指定测试某一组件
+yarn test $componentID
+```
+
+## 拓展配置
+
+在项目根目录通过 `arco.env.config.js` 拓展组件运行环境配置。目前支持拓展 Typescript、Webpack、Jest 的配置。
+
+Typescript 和 Webpack 的配置字段允许传入一个 ConfigTransformer 数组，内部接收配置拓展函数。我们提供了 ConfigMutator 来便捷拓展配置对象。其具体类型参考：
+
+* [TypescriptConfigMutator](https://github.com/arco-design/arco-cli/blob/next/packages/aspect/src/typescript/typescriptConfigMutator.ts)
+* [WebpackConfigMutator](https://github.com/arco-design/arco-cli/blob/next/packages/aspect/src/webpack/webpackConfigMutator.ts)
+
+```js
+const path = require('path');
+
+// 后续将通过 defineConfig 提供配置文件类型提示
+module.exports = function defineConfig(envId) {
+  return {
+    jest: {
+      // 指定 Jest 配置文件路径
+      // jestConfigPath: path.resolve(__dirname, './jest.config.js'),
+      // 指定 Jest 路径
+      // jestModulePath: '',
+    },
+    webpack: {
+      // 拓展本地开发预览时的 Webpack 配置
+      devServerConfig: [
+        (config) => {
+          return config.merge({
+            plugins: [],
+            resolve: {},
+          });
+        },
+      ],
+      // 拓展构建预览文件时的 Webpack 配置
+      previewConfig: [
+        (config) => {
+          return config.merge({
+            plugins: [],
+            resolve: {},
+          });
+        }
+      ],
+    },
+    typescript: {
+      // 拓展 TS 构建配置
+      // 除此处配置外，如果组件 package 目录下存在 tsconfig.json，程序还将自动应用其配置
+      buildConfig: [
+        (config) => {
+          return config.mergeTsConfig({
+            compilerOptions: {
+              allowJs: false,
+            },
+          });
+        },
+      ],
+    },
+  };
+};
+```
+
+## 发布至物料平台
+
+目前我们仍需要将物料预览产物一同发布至 NPM 以实现物料平台对其预览（依赖 UNPKG），后续将使用自建 FileServer 替代 UNPKG。因此确保 `artifacts` 目录在 NPM 发布时被作为产物一同上传。
+
+```json
+{
+  "name": "my-button",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "arco build",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "es",
+    "lib",
+    "artifacts"
+  ]
+}
+```
+
+通过以下步骤将物料发布至 NPM，并同步至物料平台：
+
+```bash
+# 如已登录可跳过步骤 1/2
+
+# 1. 设置 arco-cli 使用的 Arco 域名（内网用户需要设置其为 Arco 内网域名）
+arco host arco.design
+
+# 2. 登录
+arco login
+
+# 3. 构建并发布 NPM 包
+npm publish
+
+# 4. 将物料同步至物料平台
+arco sync --componentPattern $componentID
+```
