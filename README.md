@@ -14,30 +14,38 @@
 ```json
 {
   "arco.aspect/workspace": {
-    "components": [
-      {
-        "name": "UserSelect",
-        "rootDir": "packages/user-select/src"
-      },
-      {
-        "name": "Button",
-        "rootDir": "packages/library/components",
+    "components": {
+      "extends": {
+        "author": "MisterLuffy",
+        "group": 1,
         "entries": {
-          "base": "./Button"
+          "base": ".",
+          "main": "./index.ts",
+          "style": "./style/index.less",
+          "jsdoc": "./interface.ts",
+          "preview": "./__docs__/index.mdx"
         }
-      }
-    ],
-    "defaultComponentEntries": {
-      "base": ".",
-      "main": "./index.ts",
-      "style": "./style/index.less",
-      "jsdoc": "./interface.ts",
-      "preview": "./__docs__/index.mdx"
-    }
-  },
-  "arco.service/syncer": {
-    "defaultMaterialMeta": {
-      "group": 1
+      },
+      "members": [
+        {
+          "name": "UserSelect",
+          "rootDir": "packages/user-select/src"
+        },
+        {
+          "name": "Button",
+          "rootDir": "packages/library/components",
+          "entries": {
+            "base": "./Button"
+          }
+        },
+        {
+          "name": "Tag",
+          "rootDir": "packages/library/components",
+          "entries": {
+            "base": "./Tag"
+          }
+        }
+      ]
     }
   }
 }
@@ -46,17 +54,18 @@
 配置文件的根节点名称为 AspectID，关于工作区组件的配置位于 `root['arco.aspect/workspace']` 字段下。其字段的含义如下：
 
 * `components`: 组件描述入口；
-  * `name`: 组件名，并由 `packageName/name` 构成组件 ID；
-  * `rootDir`: 构建入口，不同于 NPM 包根路径（通常为 `src`）；
-  * `entries`: 关键文件信息；
-    * `base`: 源码目录（默认为 `./`，在组件库类型的包中可能形如 `./components`）；
-    * `main`: 主入口（相对于 `base`）；
-    * `style`: 样式主入口（相对于 `base`）；
-    * `jsdoc`: API 文档解析的入口（相对于 `base`）；
-    * `preview`: 预览入口（相对于 `base`）；
-    
-* `defaultComponentEntries`: `components.entries` 字段默认值配置;
-
+  * `extends`: 组件配置的默认值；
+  * `members`: 组件配置；
+    * `name`: 组件名，并由 `packageName/name` 构成组件 ID；
+    * `rootDir`: 构建入口，不同于 NPM 包根路径（通常为 `src`）；
+    * `author`: 作者 ID（物料平台的用户 ID）；
+    * `group`: 物料所属团队（物料平台的团队 ID）；
+    * `entries`: 关键文件信息；
+      * `base`: 源码目录（默认为 `./`，在组件库类型的包中可能形如 `./components`）；
+      * `main`: 主入口（相对于 `base`）；
+      * `style`: 样式主入口（相对于 `base`）；
+      * `jsdoc`: API 文档解析的入口（相对于 `base`）；
+      * `preview`: 预览入口（相对于 `base`）；
 
 **关于单包组件和组件库（单包多组件）的说明：**
 
@@ -185,4 +194,24 @@ npm publish
 
 # 4. 将物料同步至物料平台
 arco sync --componentPattern $componentID
+```
+
+### 使用 Access Token
+
+如果需要在 CI 流程中使用 Arco CLI，我们为用户提供了 Access Token 来完成鉴权。在物料平台右上角的用户头像区域获取 Access Token：
+
+![](./assets/access-token-entry.png)
+
+![](./assets/access-token.png)
+
+通过环境变量传入 Access Token：
+
+```bash
+ARCO_CONFIG_X_ARCO_ACCESS_TOKEN=your_access_token arco sync
+```
+
+同时你也可以通过环境变量设置 Arco 站点的域名：
+
+```bash
+ARCO_CONFIG_HOST_ARCO=arco.example.net arco sync
 ```

@@ -1,36 +1,35 @@
 {
   "arco.aspect/workspace": {
-    "components": [
-      {
-        "name": "UserSelect",
-        "rootDir": "packages/user-select/src",
-      },
-      {
-        "name": "Button",
-        "rootDir": "packages/library/components",
+    "components": {
+      "extends": {
         "entries": {
-          "base": "./Button"
+          "base": ".",
+          "main": "./index.ts",
+          "style": "./style/index.less",
+          "jsdoc": "./interface.ts",
+          "preview": "./__docs__/index.mdx"
         }
       },
-      {
-        "name": "Tag",
-        "rootDir": "packages/library/components",
-        "entries": {
-          "base": "./Tag"
+      "members": [
+        {
+          "name": "UserSelect",
+          "rootDir": "packages/user-select/src"
+        },
+        {
+          "name": "Button",
+          "rootDir": "packages/library/components",
+          "entries": {
+            "base": "./Button"
+          }
+        },
+        {
+          "name": "Tag",
+          "rootDir": "packages/library/components",
+          "entries": {
+            "base": "./Tag"
+          }
         }
-      }
-    ],
-    "defaultComponentEntries": {
-      "base": ".",
-      "main": "./index.ts",
-      "style": "./style/index.less",
-      "jsdoc": "./interface.ts",
-      "preview": "./__docs__/index.mdx"
-    }
-  },
-  "arco.service/syncer": {
-    "defaultMaterialMeta": {
-      "group": 1
+      ]
     }
   }
 }
