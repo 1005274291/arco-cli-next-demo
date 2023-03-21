@@ -1,7 +1,8 @@
 /* eslint-disable */
 
-const path = require('path');
+// const path = require('path');
 const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
+const LessPluginNpmImport = require('less-plugin-npm-import');
 
 module.exports = function defineConfig(envId) {
   return {
@@ -41,5 +42,15 @@ module.exports = function defineConfig(envId) {
         },
       ],
     },
+    less: {
+      // specify options for less.render
+      lessOptions: {
+        plugins: [new LessPluginNpmImport({ prefix: '~' })],
+      },
+    },
+    sass: {
+      // specify options for sass.compile
+      sassOptions: {}
+    }
   };
 };

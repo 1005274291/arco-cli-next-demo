@@ -34,30 +34,30 @@
     tslib "^2.3.0"
     zen-observable-ts "^1.2.5"
 
-"@arco-cli/arco@2.0.0-alpha.12":
-  version "2.0.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/@arco-cli/arco/-/arco-2.0.0-alpha.12.tgz#3dfe085a0bfd2a77d40cac85d627fa6cfd5bb021"
-  integrity sha512-9eOvN6xH5RGcX6kcj6CS5YoGuS1bTyDwdEg62RqsmM1nQ/7SoMGG/eaKDP2eOLg97GpEt4Ttu3L5JPRTMeGIZg==
+"@arco-cli/arco@2.0.0-alpha.14":
+  version "2.0.0-alpha.14"
+  resolved "https://registry.yarnpkg.com/@arco-cli/arco/-/arco-2.0.0-alpha.14.tgz#49c1f39757b7cac23836242ae3c359b26d7ab5da"
+  integrity sha512-1Iih6MVjcNMyInuhGjiY1SF4jgcwZ6okAPTWqMbYq1LK63aOD/AH7Wc/eFUVrRoomzqcnTvvvroTK5B4katX+g==
   dependencies:
-    "@arco-cli/aspect" "^2.0.0-alpha.13"
-    "@arco-cli/core" "^2.0.0-alpha.10"
-    "@arco-cli/legacy" "^2.0.0-alpha.8"
-    "@arco-cli/react" "^2.0.0-alpha.13"
-    "@arco-cli/service" "^2.0.0-alpha.13"
-    "@arco-cli/stone" "^2.0.0-alpha.1"
+    "@arco-cli/aspect" "^2.0.0-alpha.15"
+    "@arco-cli/core" "^2.0.0-alpha.12"
+    "@arco-cli/legacy" "^2.0.0-alpha.9"
+    "@arco-cli/react" "^2.0.0-alpha.15"
+    "@arco-cli/service" "^2.0.0-alpha.15"
+    "@arco-cli/stone" "2.0.0-alpha.1"
     fs-extra "^10.1.0"
 
-"@arco-cli/aspect@^2.0.0-alpha.13":
-  version "2.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@arco-cli/aspect/-/aspect-2.0.0-alpha.13.tgz#83f6e4882680a50b87114502d3260c33c1a7df0c"
-  integrity sha512-PPB+f8Jh3/14wbvUyH1XAOFxrdwf4SwS3OVv+7avvL0MT1CyyvXXzW75JzzDsG39KRgriXHAIUgR6MifpfE9Fg==
+"@arco-cli/aspect@^2.0.0-alpha.15":
+  version "2.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@arco-cli/aspect/-/aspect-2.0.0-alpha.15.tgz#de481c9f6f8d0337fb9f7ef3d57a209269cca82b"
+  integrity sha512-DF7YdN23XrELvRHYk98IkbSa4t4Qty7qBld/RqwPzbu9NCDbeFxPaaG8dne74bvP/rD2sq6hlyjFvXUx/Xo00w==
   dependencies:
     "@apollo/client" "^3.7.2"
-    "@arco-cli/core" "^2.0.0-alpha.10"
-    "@arco-cli/legacy" "^2.0.0-alpha.8"
-    "@arco-cli/service" "^2.0.0-alpha.13"
-    "@arco-cli/stone" "^2.0.0-alpha.1"
-    "@arco-cli/ui-foundation-react" "^2.0.0-alpha.13"
+    "@arco-cli/core" "^2.0.0-alpha.12"
+    "@arco-cli/legacy" "^2.0.0-alpha.9"
+    "@arco-cli/service" "^2.0.0-alpha.15"
+    "@arco-cli/stone" "2.0.0-alpha.1"
+    "@arco-cli/ui-foundation-react" "^2.0.0-alpha.15"
     "@arco-design/web-react" "^2.42.2"
     "@babel/runtime" "^7.20.6"
     "@mdx-js/mdx" "^1.6.22"
@@ -114,13 +114,13 @@
     webpack-merge "^5.8.0"
     yaml "^1.10.2"
 
-"@arco-cli/core@^2.0.0-alpha.10":
-  version "2.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@arco-cli/core/-/core-2.0.0-alpha.10.tgz#1dcab24933beec19ed3d13191526ab749e0e972d"
-  integrity sha512-giox+O0upGYLHRokF2GVVsirxpAM6x6NO0AuLDQ75huopjGdy8UXKx+FyBqoGhvXVdaV0vTWrRU8KcX5aTfwag==
+"@arco-cli/core@^2.0.0-alpha.12":
+  version "2.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/@arco-cli/core/-/core-2.0.0-alpha.12.tgz#9b752fbd155da88f2ff748300db608efdc1e151c"
+  integrity sha512-1jDNun64Q5RWgNzrogO1++0c0z89FMmUYlgL5dkeLvTYyr7UNNRo1dDRcM8Qw4WhQTz31t/9pmaBhHunMAc2kQ==
   dependencies:
-    "@arco-cli/legacy" "^2.0.0-alpha.8"
-    "@arco-cli/stone" "^2.0.0-alpha.1"
+    "@arco-cli/legacy" "^2.0.0-alpha.9"
+    "@arco-cli/stone" "2.0.0-alpha.1"
     "@babel/runtime" "^7.20.6"
     "@graphql-modules/core" "^0.7.17"
     body-parser "^1.20.1"
@@ -141,10 +141,10 @@
     react "~17"
     yargs "^17.6.2"
 
-"@arco-cli/legacy@^2.0.0-alpha.8":
-  version "2.0.0-alpha.8"
-  resolved "https://registry.yarnpkg.com/@arco-cli/legacy/-/legacy-2.0.0-alpha.8.tgz#23fa80175a638ea3fbd56ee941ff4efe2bb34388"
-  integrity sha512-oOhePuFZkpU81+REoO3Vo2b2y+PIfC3GFj2A4oMA6OUeQU0wCnsXoMOOTRKJPZ+7BYMAiE4kxywz4Gflg6zk2g==
+"@arco-cli/legacy@^2.0.0-alpha.9":
+  version "2.0.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@arco-cli/legacy/-/legacy-2.0.0-alpha.9.tgz#a9d3bf7f998384a7c2383d704c3d45542f38b4e7"
+  integrity sha512-x6FytAd2pBE0k8WmXtnUBquUp8eqXZ2ZihqXPB6dXCoe6sFhu2HutcKCrdhX/2GxGos110MtqV6qYfJ8EGxiYA==
   dependencies:
     axios "^1.2.2"
     bluebird "^3.7.2"
@@ -176,17 +176,17 @@
     vinyl-file "^3.0.0"
     yn "^4.0.0"
 
-"@arco-cli/react@^2.0.0-alpha.13":
-  version "2.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@arco-cli/react/-/react-2.0.0-alpha.13.tgz#123d954798c2d52f23313f34fd968a38008676ff"
-  integrity sha512-Gb69EiNFam/ntgS3Y2coWl3JnceBkk8Ww8BJfD0gK4C4fRxmH3+mjvjMG51w8yp4MRZn/s7bH/TT4MMHcvAXzg==
+"@arco-cli/react@^2.0.0-alpha.15":
+  version "2.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@arco-cli/react/-/react-2.0.0-alpha.15.tgz#f8345a144bf1c76acf7260665cc4014779b4b3ae"
+  integrity sha512-ECbUtwO3V1sYkQIcswLgp86D3AfZKQuCrE8pTMaSdI+qm4jg5i7x3ch0Con7Sb3rdv2NktfxA31pWwFtLSxymQ==
   dependencies:
-    "@arco-cli/aspect" "^2.0.0-alpha.13"
-    "@arco-cli/core" "^2.0.0-alpha.10"
-    "@arco-cli/legacy" "^2.0.0-alpha.8"
-    "@arco-cli/service" "^2.0.0-alpha.13"
-    "@arco-cli/stone" "^2.0.0-alpha.1"
-    "@arco-cli/ui-foundation-react" "^2.0.0-alpha.13"
+    "@arco-cli/aspect" "^2.0.0-alpha.15"
+    "@arco-cli/core" "^2.0.0-alpha.12"
+    "@arco-cli/legacy" "^2.0.0-alpha.9"
+    "@arco-cli/service" "^2.0.0-alpha.15"
+    "@arco-cli/stone" "2.0.0-alpha.1"
+    "@arco-cli/ui-foundation-react" "^2.0.0-alpha.15"
     "@babel/core" "^7.20.5"
     "@babel/plugin-proposal-class-properties" "^7.18.6"
     "@babel/plugin-proposal-decorators" "^7.20.5"
@@ -232,21 +232,21 @@
     strip-ansi "^7.0.1"
     style-loader "^3.3.1"
     terser-webpack-plugin "^5.3.6"
-    ts-document "~0"
+    ts-document "^0.8.0"
     typescript "^4.9.3"
     webpack "^5.75.0"
     webpack-bundle-analyzer "^4.8.0"
 
-"@arco-cli/service@^2.0.0-alpha.13":
-  version "2.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@arco-cli/service/-/service-2.0.0-alpha.13.tgz#d2a33d25a442b3bae705aa0fba25d21352aa6b64"
-  integrity sha512-Vgw5wmRx6QrQIVm4yOkFwBtNadvEqKyjkSexgNBT11Z4B4mhub7hSE+CTYfZkCh160O/G8O8YeG/VcRChl1HtQ==
+"@arco-cli/service@^2.0.0-alpha.15":
+  version "2.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@arco-cli/service/-/service-2.0.0-alpha.15.tgz#42acf484ec555947db3c3e254b686f6beb1e4b79"
+  integrity sha512-hQ4MEHDFJQIScejnpy+STkMMyt47iKl5PCugmEOANvGJyEwa3CvZ4jYBmPYP/bq/rgAeEB/0OKhY5EvZZW2kiw==
   dependencies:
-    "@arco-cli/aspect" "^2.0.0-alpha.13"
-    "@arco-cli/core" "^2.0.0-alpha.10"
-    "@arco-cli/legacy" "^2.0.0-alpha.8"
-    "@arco-cli/stone" "^2.0.0-alpha.1"
-    "@arco-cli/ui-foundation-react" "^2.0.0-alpha.13"
+    "@arco-cli/aspect" "^2.0.0-alpha.15"
+    "@arco-cli/core" "^2.0.0-alpha.12"
+    "@arco-cli/legacy" "^2.0.0-alpha.9"
+    "@arco-cli/stone" "2.0.0-alpha.1"
+    "@arco-cli/ui-foundation-react" "^2.0.0-alpha.15"
     "@babel/runtime" "^7.20.6"
     "@pmmmwh/react-refresh-webpack-plugin" "^0.5.10"
     "@svgr/webpack" "^6.5.1"
@@ -277,7 +277,7 @@
     webpack "^5.75.0"
     webpack-dev-server "^4.11.1"
 
-"@arco-cli/stone@^2.0.0-alpha.1":
+"@arco-cli/stone@2.0.0-alpha.1":
   version "2.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/@arco-cli/stone/-/stone-2.0.0-alpha.1.tgz#5ca273244a7a37f3d178f308316c09051245780c"
   integrity sha512-Q70qDcSxgpkHXLju4/jEnaFTUTIH1qaNNDG/rMpW7IsJWGCq7yM0QG8Sx5wub+XxJL5hz6R8YoKK7p664Sgp4Q==
@@ -286,13 +286,13 @@
     comment-json "^4.2.3"
     fs-extra "^10.1.0"
 
-"@arco-cli/ui-foundation-react@^2.0.0-alpha.13":
-  version "2.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@arco-cli/ui-foundation-react/-/ui-foundation-react-2.0.0-alpha.13.tgz#05013dd85bdcfbb0298cee8ccabc0cdcc31bfe09"
-  integrity sha512-sqFPrfPeFWO3Bt80+Nk7h9HctjPdjMRsOEfct6BfOa/LFHL8AIzl2BXqAENjNXivFow8vmF+dKOEa1dKG5Bnqw==
+"@arco-cli/ui-foundation-react@^2.0.0-alpha.15":
+  version "2.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@arco-cli/ui-foundation-react/-/ui-foundation-react-2.0.0-alpha.15.tgz#70b9cb032b269945c0c4785d1bfdb41f369608f4"
+  integrity sha512-g6PFNJCHOqMStMfDzMK/D+VMmjldOy1/GxzO9A+G9NkLBOmY7A3dUWYKjXSOiH8mKwZ7OcKFfzMVfAh2Ib2k2w==
   dependencies:
     "@apollo/client" "^3.7.2"
-    "@arco-cli/aspect" "^2.0.0-alpha.13"
+    "@arco-cli/aspect" "^2.0.0-alpha.15"
     "@arco-design/web-react" "^2.42.2"
     "@babel/runtime" "^7.20.6"
     "@mdx-js/react" "^1.6.22"
@@ -3635,7 +3635,7 @@ arrify@^2.0.1:
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
   integrity sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==
 
-asap@^2.0.0, asap@~2.0.6:
+asap@^2.0.0, asap@~2.0.3, asap@~2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
   integrity sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==
@@ -8677,6 +8677,14 @@ less-loader@^11.1.0:
   dependencies:
     klona "^2.0.4"
 
+less-plugin-npm-import@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/less-plugin-npm-import/-/less-plugin-npm-import-2.1.0.tgz#823e6986c93318a98171ca858848b6bead55bf3e"
+  integrity sha512-f7pVkEooRq2/jge/M/Y+spoPXj5rRIY30q1as+3kZsDG8Rs+loNJUCVQjzXB9Ao/9FeIJULiq2zrXymv+OMTbw==
+  dependencies:
+    promise "~7.0.1"
+    resolve "~1.1.6"
+
 less@^4.1.3:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/less/-/less-4.1.3.tgz#175be9ddcbf9b250173e0a00b4d6920a5b770246"
@@ -11021,6 +11029,13 @@ promise@^8.1.0:
   dependencies:
     asap "~2.0.6"
 
+promise@~7.0.1:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/promise/-/promise-7.0.4.tgz#363e84a4c36c8356b890fed62c91ce85d02ed539"
+  integrity sha512-8z1gTSL9cMgqCx8zvMYhzT0eQURAQNSQqR8B2hGfCYkAzt1vjReVdKBv4YwGw3OXAPaxfm4aR0gLoBUon4VmmA==
+  dependencies:
+    asap "~2.0.3"
+
 prompt@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/prompt/-/prompt-1.3.0.tgz#b1f6d47cb1b6beed4f0660b470f5d3ec157ad7ce"
@@ -11798,6 +11813,11 @@ resolve@^2.0.0-next.4:
     is-core-module "^2.9.0"
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
+
+resolve@~1.1.6:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
+  integrity sha512-9znBF0vBcaSN3W2j7wKvdERPwqTxSpCq+if5C0WoTCyV9n24rua28jeuQ2pL/HOf+yUe/Mef+H/5p60K0Id3bg==
 
 response-iterator@^0.2.6:
   version "0.2.6"
@@ -12971,10 +12991,10 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.5.tgz#b8b639cefad7d0bb2abd37d433ff8293efa5f406"
   integrity sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==
 
-ts-document@~0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/ts-document/-/ts-document-0.7.0.tgz#61fa0b4bf5dba85094f8596a3161ced43dc68734"
-  integrity sha512-7EH0VHo3JOAx9AWtieglkWXz0AV7L1u6uHdtuDh3Hm7S4UW4nYiTjHY7bqFQiffnbEoH42XkQE4luTFE551Deg==
+ts-document@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/ts-document/-/ts-document-0.8.0.tgz#6a95005cd7da9bcfc6f20c13629648f5fbf3973b"
+  integrity sha512-mk8CXUCtekM40dPHcNMMNL6fPQcOeK6ov9FMIbcwuiUZuPBk82SDdaeGglvezaslN9kacxqaYN90AVPBewwuAQ==
   dependencies:
     ts-morph "^11.0.0"
 

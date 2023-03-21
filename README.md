@@ -54,12 +54,14 @@
 配置文件的根节点名称为 AspectID，关于工作区组件的配置位于 `root['arco.aspect/workspace']` 字段下。其字段的含义如下：
 
 * `components`: 组件描述入口；
-  * `extends`: 组件配置的默认值；
+  * `extends`: 组件配置的默认值，可以传入下边 `members` 所接受的全部字段；
   * `members`: 组件配置；
     * `name`: 组件名，并由 `packageName/name` 构成组件 ID；
     * `rootDir`: 构建入口，不同于 NPM 包根路径（通常为 `src`）；
     * `author`: 作者 ID（物料平台的用户 ID）；
     * `group`: 物料所属团队（物料平台的团队 ID）；
+    * `repository`: 物料代码仓库链接；
+    * `uiResource`: 物料设计资源链接（如 Figma 资源地址）；
     * `entries`: 关键文件信息；
       * `base`: 源码目录（默认为 `./`，在组件库类型的包中可能形如 `./components`）；
       * `main`: 主入口（相对于 `base`）；
@@ -102,7 +104,7 @@ yarn test $componentID
 
 ## 拓展配置
 
-在项目根目录通过 `arco.env.config.js` 拓展组件运行环境配置。目前支持拓展 Typescript、Webpack、Jest 的配置。
+在项目根目录通过 `arco.env.config.js` 拓展组件运行环境配置。目前支持拓展 Typescript、Webpack、Jest、Less、Sass 的配置。
 
 Typescript 和 Webpack 的配置字段允许传入一个 ConfigTransformer 数组，内部接收配置拓展函数。我们提供了 ConfigMutator 来便捷拓展配置对象。其具体类型参考：
 
@@ -154,6 +156,14 @@ module.exports = function defineConfig(envId) {
         },
       ],
     },
+    less: {
+      // 拓展 less.render() 的参数
+      lessOptions: {}
+    },
+    sass: {
+      // 拓展 sass.compile() 的参数
+      sassOptions: {}
+    }
   };
 };
 ```
