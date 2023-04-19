@@ -15,7 +15,7 @@
     "react-router-dom": "^6.5.0"
   },
   "devDependencies": {
-    "@arco-cli/arco": "2.0.0-alpha.14",
+    "@arco-cli/arco": "2.0.0-alpha.21",
     "@arco-design/theme-line": "^0.0.3",
     "@arco-design/web-react": "~2",
     "@arco-plugins/webpack-react": "^1.4.8",
